@@ -132,7 +132,7 @@ var menus = {
 			shortcut: "Ctrl+X",
 			enabled: function(){
 				// @TODO disable if no selection (image or text)
-				return is_electron;
+				return is_electron || !!window.systemCopy;
 			},
 			action: function(){
 				document.execCommand("cut");
@@ -144,7 +144,7 @@ var menus = {
 			shortcut: "Ctrl+C",
 			enabled: function(){
 				// @TODO disable if no selection (image or text)
-				return is_electron;
+				return is_electron || !!window.systemCopy;
 			},
 			action: function(){
 				document.execCommand("copy");
@@ -155,10 +155,15 @@ var menus = {
 			item: "&Paste",
 			shortcut: "Ctrl+V",
 			enabled: function(){
-				return is_electron;
+				// @TODO disable if clipboard is empty
+				return is_electron || !!window.systemPaste;
 			},
 			action: function(){
-				document.execCommand("paste");
+				if (window.systemPaste) {
+					window.systemPaste();
+				} else {
+					document.execCommand("paste");
+				}
 			},
 			description: "Inserts the contents of the Clipboard.",
 		},

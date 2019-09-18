@@ -366,6 +366,12 @@ $G.on("cut copy paste", function(e){
 						});
 					});
 				});
+			} else if (typeof window.systemCopy === 'function') {
+				selection.canvas.toBlob(function(blob){
+					sanity_check_blob(blob, function(){
+						window.systemCopy(blob);
+					});
+				});
 			} else {
 				var data_url = selection.canvas.toDataURL();
 				cd.setData("text/x-data-uri; type=image/png", data_url);

@@ -591,7 +591,7 @@ self.__precacheManifest = [
   },
   {
     "url": "index.html",
-    "revision": "38dd7f281598658b23c77bc9a37eb4a8"
+    "revision": "ea89df303d8f4f5e7abc97e6599f6a61"
   },
   {
     "url": "lib/canvas.toBlob.js",
@@ -667,11 +667,15 @@ self.__precacheManifest = [
   },
   {
     "url": "src/app.js",
-    "revision": "7359c59f750b9a5020c489dd4bdf8d9e"
+    "revision": "93ae9216f5386f66f6aabf5812d219fa"
   },
   {
     "url": "src/canvas-change.js",
     "revision": "7b4ddd26d91b374ef236e01b5a5bd2e2"
+  },
+  {
+    "url": "src/clipboard.js",
+    "revision": "f1339c58c4576f57a5562d50f885f72a"
   },
   {
     "url": "src/electron-injected.js",
@@ -711,7 +715,7 @@ self.__precacheManifest = [
   },
   {
     "url": "src/menus.js",
-    "revision": "f6b2bd6f7f1f3cad2091d158145fcb64"
+    "revision": "202dc214daf1c2b093ce8ee51a0db668"
   },
   {
     "url": "src/nativefs.js",
