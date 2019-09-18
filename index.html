@@ -105,6 +105,8 @@
 				  return;
 
 				const file = await window.launchParams.files[0].getFile();
+				Object.defineProperty(file, 'path', { value: handle });
+				
 				open_from_File(file, () => {
 					console.error('Something went horribly, terribly wrong.');
 				})
