@@ -366,8 +366,16 @@ self.__precacheManifest = [
     "revision": "5c694f244e4e7504cbdb50cd779a504b"
   },
   {
+    "url": "images/icons/512.png",
+    "revision": "55102669d7d2f032e670c4e300fedb5f"
+  },
+  {
     "url": "images/icons/mac.icns",
     "revision": "60a1e86684d75033a6c740b3c2115c2d"
+  },
+  {
+    "url": "images/icons/touch-icon.png",
+    "revision": "e21dd743de5ba0979125abbec6419a9a"
   },
   {
     "url": "images/icons/windows.ico",
@@ -583,7 +591,7 @@ self.__precacheManifest = [
   },
   {
     "url": "index.html",
-    "revision": "2b657bef7512168f67fd393a26b074b5"
+    "revision": "38dd7f281598658b23c77bc9a37eb4a8"
   },
   {
     "url": "lib/canvas.toBlob.js",
