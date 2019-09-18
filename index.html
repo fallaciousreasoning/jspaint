@@ -99,5 +99,16 @@
 				);
 			}
 		</script>
+		<script>
+			window.addEventListener('load', async () => {
+				if (!window.launchParams || !window.launchParams.files || !window.launchParams.files.length)
+				  return;
+
+				const file = await window.launchParams.files[0].getFile();
+				open_from_File(file, () => {
+					console.error('Something went horribly, terribly wrong.');
+				})
+			});
+		</script>
 	</body>
 </html>

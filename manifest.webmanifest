@@ -37,5 +37,16 @@
       "sizes": "512x512",
       "type": "image/png"
     }
-  ]
+  ],
+  "file_handler": {
+    "action": ".",
+    "files": [
+      {
+        "name": "Images",
+        "accept": [
+          "image/*"
+        ]
+      }
+    ]
+  }
 }
