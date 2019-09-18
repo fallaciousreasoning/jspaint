@@ -104,9 +104,10 @@
 				if (!window.launchParams || !window.launchParams.files || !window.launchParams.files.length)
 				  return;
 
-				const file = await window.launchParams.files[0].getFile();
+				const handle = window.launchParams.files[0];
+				const file = await handle.getFile();
 				Object.defineProperty(file, 'path', { value: handle });
-				
+
 				open_from_File(file, () => {
 					console.error('Something went horribly, terribly wrong.');
 				})
