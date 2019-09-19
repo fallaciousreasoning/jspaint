@@ -13,6 +13,13 @@ if ('chooseFileSystemEntries' in window) {
         mediaTypes: ['image/webp']
     }];
 
+    async function fileFromHandle(handle) {
+        const file = await handle.getFile();
+        // Caller stores the handle in document_file_path for saving the file later on
+        Object.defineProperty(file, 'path', { value: handle });
+        return file;
+    }
+
     async function resolveMimeType(fileName) {
         const extension = fileName.split('.').pop();
         const format = acceptedFormats.find(format => format.extensions.includes(extension.toLowerCase()));
@@ -40,10 +47,7 @@ if ('chooseFileSystemEntries' in window) {
         const handle = await window.chooseFileSystemEntries({
             accepts: acceptedFormats
         });
-        const file = await handle.getFile();
-
-        // Caller stores the handle in document_file_path for saving the file later on
-        Object.defineProperty(file, 'path', { value: handle });
+        const file = await fileFromHandle(handle);
 
         callback(file);
     };
