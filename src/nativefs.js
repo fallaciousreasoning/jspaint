@@ -1,3 +1,14 @@
+/**
+ * Gets the file for a handle and stores a reference to the handle on it.
+ * Useful for saving changes back to the handle.
+ */
+export async function fileFromHandle(handle) {
+    const file = await handle.getFile();
+    // Caller stores the handle in document_file_path for saving the file later on
+    Object.defineProperty(file, 'path', { value: handle });
+    return file;
+}
+
 if ('chooseFileSystemEntries' in window) {
     const acceptedFormats = [{
         description: 'PNG',
@@ -40,10 +51,7 @@ if ('chooseFileSystemEntries' in window) {
         const handle = await window.chooseFileSystemEntries({
             accepts: acceptedFormats
         });
-        const file = await handle.getFile();
-
-        // Caller stores the handle in document_file_path for saving the file later on
-        Object.defineProperty(file, 'path', { value: handle });
+        const file = await fileFromHandle(handle);
 
         callback(file);
     };

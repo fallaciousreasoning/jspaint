@@ -42,7 +42,7 @@
     "action": ".",
     "files": [
       {
-        "name": "Images",
+        "name": "Edit",
         "accept": [
           "image/*"
         ]

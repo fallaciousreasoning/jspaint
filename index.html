@@ -84,6 +84,7 @@
 		<script src="src/vaporwave-fun.js"></script>
 		<script type="module" src="src/clipboard.js"></script>
 		<script type="module" src="src/nativefs.js"></script>
+		<script type="module" src="src/file-handling.js"></script>
 		<script type="module" src="src/service-worker.js"></script>
 
 		<script>
@@ -98,20 +99,6 @@
 					'</div>'
 				);
 			}
-		</script>
-		<script>
-			window.addEventListener('load', async () => {
-				if (!window.launchParams || !window.launchParams.files || !window.launchParams.files.length)
-				  return;
-
-				const handle = window.launchParams.files[0];
-				const file = await handle.getFile();
-				Object.defineProperty(file, 'path', { value: handle });
-
-				open_from_File(file, () => {
-					console.error('Something went horribly, terribly wrong.');
-				})
-			});
 		</script>
 	</body>
 </html>
