@@ -1,3 +1,14 @@
+/**
+ * Gets the file for a handle and stores a reference to the handle on it.
+ * Useful for saving back to the handle.
+ */
+export async function fileFromHandle(handle) {
+    const file = await handle.getFile();
+    // Caller stores the handle in document_file_path for saving the file later on
+    Object.defineProperty(file, 'path', { value: handle });
+    return file;
+}
+
 if ('chooseFileSystemEntries' in window) {
     const acceptedFormats = [{
         description: 'PNG',
@@ -12,13 +23,6 @@ if ('chooseFileSystemEntries' in window) {
         extensions: ['webp'],
         mediaTypes: ['image/webp']
     }];
-
-    async function fileFromHandle(handle) {
-        const file = await handle.getFile();
-        // Caller stores the handle in document_file_path for saving the file later on
-        Object.defineProperty(file, 'path', { value: handle });
-        return file;
-    }
 
     async function resolveMimeType(fileName) {
         const extension = fileName.split('.').pop();
