@@ -1,6 +1,7 @@
 import { fileFromHandle } from '/src/nativefs.js';
 
-// On load, check if we were launched with any file handles and load the first one.
+// On load, check if we were launched with any file handles. If so, open the
+// first one for editing.
 window.addEventListener('load', async () => {
     // Check the file handling API is supported.
     if (!window.launchParams || !window.launchParams.files)
@@ -13,7 +14,9 @@ window.addEventListener('load', async () => {
 
     const file = await fileFromHandle(handle);
     open_from_File(file, error => {
-        if(error)
-            return show_error_message("Failed to open file:", error);
+        if(!error)
+            return;
+        
+        show_error_message("Failed to open file:", error);
     })
 });

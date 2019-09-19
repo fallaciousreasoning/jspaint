@@ -1,6 +1,6 @@
 /**
  * Gets the file for a handle and stores a reference to the handle on it.
- * Useful for saving back to the handle.
+ * Useful for saving changes back to the handle.
  */
 export async function fileFromHandle(handle) {
     const file = await handle.getFile();
