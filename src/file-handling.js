@@ -1,4 +1,4 @@
-import { fileFromHandle } from '/src/nativefs.js';
+import { fileFromHandle } from './nativefs.js';
 
 // On load, check if we were launched with any file handles. If so, open the
 // first one for editing.
