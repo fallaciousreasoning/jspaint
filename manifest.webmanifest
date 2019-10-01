@@ -42,9 +42,18 @@
     "action": ".",
     "files": [
       {
-        "name": "Edit",
+        "name": "Image File",
         "accept": [
-          "image/*"
+          "image/png",
+          "image/jpeg",
+          "image/bmp",
+          "image/gif",
+          "image/webp",
+          ".png",
+          ".jpg",
+          ".jpeg",
+          ".gif",
+          ".webp"
         ]
       }
     ]
