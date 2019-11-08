@@ -10,7 +10,7 @@
 	"activities": {
 		"edit": {
 			"filters": {
-				"type": [ "image/*", "image/png" ]
+				"type": [ "image/*", "image/png", "image/jpeg", "image/webp" ]
 			},
 			"href": "/jspaint/",
 			"disposition": "window",
