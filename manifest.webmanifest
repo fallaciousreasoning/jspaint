@@ -38,24 +38,20 @@
       "type": "image/png"
     }
   ],
-  "file_handler": {
-    "action": ".",
-    "files": [
-      {
-        "name": "Image File",
-        "accept": [
-          "image/png",
-          "image/jpeg",
-          "image/bmp",
-          "image/gif",
-          "image/webp",
-          ".png",
+  "file_handlers": [
+    {
+      "name": "Image File",
+      "action": ".",
+      "accept": {
+        "image/png": ".png",
+        "image/jpeg": [
           ".jpg",
-          ".jpeg",
-          ".gif",
-          ".webp"
-        ]
+          ".jpeg"
+        ],
+        "image/bmp": ".bmp",
+        "image/gif": ".gif",
+        "image/webp": ".webp"
       }
-    ]
-  }
+    }
+  ]
 }
